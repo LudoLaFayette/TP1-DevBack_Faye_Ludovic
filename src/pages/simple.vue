@@ -38,7 +38,7 @@ console.log(unObjet);
   <div>
         <p>Simple</p>
         <CardMaison/>
-        <CardMaison v-bind="{nom: 'lol', price:'300 000', adress:'Une bonne adresse', beds:'8', bathroom: '3', dimension:'87'}" />
+        <CardMaison v-bind="{nom: 'bonjour', price:'300 000', adress:'Une bonne adresse', beds:'8', bathroom: '3', dimension:'87'}" />
         <CardMaison v-bind="unObjet"/>
     </div>
 </template>
