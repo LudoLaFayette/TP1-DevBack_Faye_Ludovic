@@ -1,0 +1,20 @@
+[
+    {
+    "image": "../../assets/images/maison1.png",
+    "nom": "BeverlyHills",
+    "price": 2500,
+    "adress": "2821 lake seville, Palm Harbor, TX",
+    "beds": 6,
+    "bathroom": 2,
+    "dimension": "66"
+    },
+    {
+    "image": "../../assets/images/maison1.png",
+    "nom": "BeverlyHillsette",
+    "price": 1500,
+    "adress": "2821 lake sevillessss, Palm Harbor, TX",
+    "beds": 3,
+    "bathroom": 1,
+    "dimension": 55
+    }
+]

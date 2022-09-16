@@ -2,13 +2,22 @@
 import CardMaison from "../components/card.vue";
 
 const unObjet = {
-  image: "../../assets/images/maison1.png",
+  image: "/images/maison1.png",
   nom: "BeverlyHills",
-  price: 2500,
+  prix: 2500,
   adress: "2821 lake seville, Palm Harbor, TX",
-  beds: 6,
-  bathroom: 2,
+  nbrBeds: 6,
+  nbrSDB: 2,
   dimension: 66,
+};
+const unObjet1 = {
+  image: "/images/maison2.png",
+  nom: "BeverlyHillsette",
+  prix: 1500,
+  adress: "2821 lake sevillessss, Palm Harbor, TX",
+  nbrBeds: 3,
+  nbrSDB: 1,
+  dimension: 55,
 };
 console.log(unObjet);
  /*
@@ -37,8 +46,8 @@ console.log(unObjet);
   </div> -->
   <div>
         <p>Simple</p>
-        <CardMaison/>
-        <CardMaison v-bind="{nom: 'bonjour', price:'300 000', adress:'Une bonne adresse', beds:'8', bathroom: '3', dimension:'87'}" />
+        <!-- <CardMaison v-bind="{nom: 'bonjour', price:'300 000', adress:'Une bonne adresse', beds:'8', bathroom: '3', dimension:'87'}" /> -->
         <CardMaison v-bind="unObjet"/>
+        <CardMaison v-bind="unObjet1"/>
     </div>
 </template>

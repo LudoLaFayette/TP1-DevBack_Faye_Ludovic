@@ -1,19 +1,18 @@
-<script>
-import Bathroom from "@/components/Heart.vue";
-import Heart from "@/components/Bathroom.vue";
-
-export default {
-  /* Les "props" servent à définir les "attributs" qui seront passés a l'instance du composant pour le personnalisé.
-  Chaque "props" a un nom et un type */
-  defineProps: {
-    nom: String,
-    prix: Number,
-    favori: Boolean,
-    image: String, // les images sont simplement l'URL absolue (depuis la racine, débute par '/' )
-    nbrSDB: Number,
-  },
-  components: { Bathroom, Heart },
-};
+<script setup lang="ts">
+import Bathroom from "@/components/Bathroom.vue";
+import Heart from "@/components/Heart.vue";
+import Dimension from "@/components/Dimension.vue";
+import Bed from "@/components/Bed.vue";
+defineProps({
+  nom: String,
+  adress:String,
+  prix: Number,
+  favori: Boolean,
+  image: String, // les images sont simplement l'URL absolue (depuis la racine, débute par '/' )
+  nbrSDB: Number,
+  nbrBeds: Number,
+  dimension: Number,
+});
 </script>
 
 <template>
@@ -33,10 +32,16 @@ export default {
       <div class="text-2xl font-bold text-indigo-500 pr-1">${{ prix }}</div>
 
       <h3 class="text-2xl text-gray-900">{{ nom }}</h3>
+      <h3 class="text-2xl text-gray-900">{{ adress }}</h3>
 
       <hr class="border-indigo-100 border-t-2 my-4" />
+      <div class="flex gap-5">
+      <div><bathroom class="inline-block pr-1" />{{ nbrSDB }}</div>
+      <div><bed class="inline-block pr-1" />{{ nbrBeds }}</div>
+      <div><dimension class="inline-block pr-1" />{{ dimension }}</div>
+      </div>
 
-      <div><bath class="inline-block pr-1" />{{ nbrSDB }} Bathrooms</div>
+      
     </figcaption>
   </figure>
 </template>

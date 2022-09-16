@@ -44,6 +44,14 @@
         </router-link>
       </li>
     </ul>
+    <ul>
+      <li>
+        <router-link class="text-red-600 underline" to="news">
+          lien vers
+          <code class="font-mono">/src/pages/edit/new.vue</code>
+        </router-link>
+      </li>
+    </ul>
   </nav>
 
   <!-- Affiche les pages -->

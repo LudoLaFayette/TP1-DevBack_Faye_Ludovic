@@ -7,6 +7,8 @@ import index from "./pages/index.vue";
 import liste from "./pages/liste.vue";
 import listeJS from "./pages/listeJSon.vue";
 import listeFetch from "./pages/listeFetch.vue";
+import { plugin, defaultConfig } from "@formkit/vue";
+import news from './pages/edit/new.vue'
 
 import "./index.css";
 
@@ -40,9 +42,15 @@ const router = createRouter({
       name: 'listeFetch',
       component: listeFetch
     },
+    {
+      path: '/news',
+      name: 'news',
+      component: news
+    },
   ],
 });
 
 const app = createApp(App);
 app.use(router);
+app.use(plugin, defaultConfig);
 app.mount("#app");
