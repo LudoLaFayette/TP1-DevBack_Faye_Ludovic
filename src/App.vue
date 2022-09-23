@@ -46,6 +46,14 @@
     </ul>
     <ul>
       <li>
+        <router-link class="text-red-600 underline" to="listeSupabase">
+          lien vers supabase
+          <code class="font-mono">/src/pages/listeSupabase.vue</code>
+        </router-link>
+      </li>
+    </ul>
+    <ul>
+      <li>
         <router-link class="text-red-600 underline" to="news">
           lien vers
           <code class="font-mono">/src/pages/edit/new.vue</code>

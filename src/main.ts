@@ -9,6 +9,7 @@ import listeJS from "./pages/listeJSon.vue";
 import listeFetch from "./pages/listeFetch.vue";
 import { plugin, defaultConfig } from "@formkit/vue";
 import news from './pages/edit/new.vue'
+import listeSupabase from './pages/listeSupabase.vue'
 
 import "./index.css";
 
@@ -46,6 +47,11 @@ const router = createRouter({
       path: '/news',
       name: 'news',
       component: news
+    },
+    {
+      path: '/listeSupabase',
+      name: 'listeSupabase',
+      component: listeSupabase
     },
   ],
 });
