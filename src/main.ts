@@ -10,6 +10,8 @@ import listeFetch from "./pages/listeFetch.vue";
 import { plugin, defaultConfig } from "@formkit/vue";
 import news from './pages/edit/new.vue'
 import listeSupabase from './pages/listeSupabase.vue'
+import logout from './pages/logout.vue'
+import logIn from './pages/logIn.vue'
 
 import "./index.css";
 
@@ -52,6 +54,16 @@ const router = createRouter({
       path: '/listeSupabase',
       name: 'listeSupabase',
       component: listeSupabase
+    },
+    {
+      path: '/logout',
+      name: 'logout',
+      component: logout
+    },
+    {
+      path: '/logIn',
+      name: 'logIn',
+      component: logIn
     },
   ],
 });

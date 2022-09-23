@@ -60,6 +60,22 @@
         </router-link>
       </li>
     </ul>
+    <ul>
+      <li>
+        <router-link class="text-red-600 underline" to="logout">
+          lien vers
+          <code class="font-mono">/src/pages/edit/logout.vue</code>
+        </router-link>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <router-link class="text-red-600 underline" to="logIn">
+          lien vers
+          <code class="font-mono">/src/pages/logIn.vue</code>
+        </router-link>
+      </li>
+    </ul>
   </nav>
 
   <!-- Affiche les pages -->
