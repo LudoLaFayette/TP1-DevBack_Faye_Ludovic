@@ -3,9 +3,10 @@ import { ref } from "@vue/reactivity";
 import { supabase, user } from "../supabase";
 
 async function signIn(data, node) {
-  const { user, error } = await (nvlUtilisateur
+  const { user, error } = await ( nvlUtilisateur.value
     ? supabase.auth.signUp(data)
-    : supabase.auth.signIn(data));
+    :  supabase.auth.signIn(data));
+    console.log(user, error);
   if (error) {
     console.error(error);
     node.setErrors([error.message]);
