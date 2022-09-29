@@ -1,5 +1,5 @@
 <script setup>
-import Card from "../components/card.vue";
+import CardMaison from "../components/card.vue";
 import maisons from "@/assets/Maisons.json";
 </script>
             
@@ -7,8 +7,8 @@ import maisons from "@/assets/Maisons.json";
             <div>
                 <div class="p-2">Page liste avec données JSON</div>
             </div>
-            <div v-for="maison in maisons" :key="maison.id">
-                <Card v-bind="maison"/>
+            <div >
+                <CardMaison  v-for="uneMaison of maisons " :key="uneMaison.nom" v-bind="uneMaison"/>
             </div>
     
     

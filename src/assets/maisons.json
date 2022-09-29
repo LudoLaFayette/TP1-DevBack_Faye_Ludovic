@@ -1,34 +1,21 @@
 [
+   
     {
-        "price": "100 800",
-        "name": "Random",
-        "adresse": "Je sais pas ou",
-        "bed": 7,
-        "bathroom": "4",
-        "mcarre": "99"
-    },
-    {
-        "price": "100 800",
-        "name": "Random",
-        "adresse": "Je saisdgdgdgdsgsd ou",
-        "bed": 7,
-        "bathroom": "4",
-        "mcarre": "99"
-    },
-    {
-        "price": "100 800",
-        "name": "Random",
-        "adresse": "Je sais pas ou",
-        "bed": 7,
-        "bathroom": "4",
-        "mcarre": "99"
-    },
-    {
-        "price": "100 800",
-        "name": "Random",
-        "adresse": "Je sais pas ou",
-        "bed": 7,
-        "bathroom": "4",
-        "mcarre": "99"
-    }
+        "image": "/images/maison1.png",
+        "nom": "BeverlyHills",
+        "prix": 2500,
+        "adress": "2821 lake seville, Palm Harbor, TX",
+        "nbrBeds": 6,
+        "nbrSDB": 2,
+        "dimension": 66
+      },
+      {
+        "image": "/images/maison2.png",
+        "nom": "BeverlyHillsette",
+        "prix": 1500,
+        "adress": "2821 lake sevillessss, Palm Harbor, TX",
+        "nbrBeds": 3,
+        "nbrSDB": 1,
+        "dimension": 55
+      }
 ]

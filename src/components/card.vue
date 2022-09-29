@@ -25,7 +25,7 @@ defineProps({
       <address class="my-2 not-italic text-gray-500">{{ adress }}</address>
       <hr class="my-2 border-t-2 border-indigo-100" />
       <div class="-order-1 flex items-center">
-        <div class="text-2xl text-indigo-500">${{ prix.toLocaleString("en-US") }}</div>
+        <div class="text-2xl text-indigo-500"> $ {{ prix }}</div>
         <div class="text text-gray-900">/months</div>
       </div>
       <div class="flex justify-between text-sm">
