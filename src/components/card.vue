@@ -3,7 +3,7 @@ import Bathroom from "@/components/Bathroom.vue";
 import Heart from "@/components/Heart.vue";
 import Dimension from "@/components/Dimension.vue";
 import Bed from "@/components/Bed.vue";
-defineProps({
+const props = defineProps({
   nom: String,
   adress: String,
   prix: Number,
@@ -13,6 +13,8 @@ defineProps({
   nbrBeds: Number,
   dimension: Number,
 });
+console.log(props.favori);
+
 </script>
 
 <template>
@@ -34,7 +36,7 @@ defineProps({
         <div><dimension class="inline-block pr-1 align-top" /> {{ dimension }}</div>
       </div>
       <div class="absolute top-7 right-5 grid h-12 w-12 place-items-center rounded-full border-2 border-indigo-100">
-        <heart :class="{ 'fill-red-400': true }" />
+        <heart :class="{ 'fill-red-400': favori }" />
       </div>    
     </figcaption>
   </figure>

@@ -6,7 +6,7 @@
     </h4>
     <ul>
       <li>
-        <router-link class="text-red-600 underline" to="index">
+        <router-link class="text-red-600 underline" to="/">
           lien vers
           <code class="font-mono">/src/pages/index.vue</code>
         </router-link>
@@ -30,7 +30,7 @@
     </ul>
     <ul>
       <li>
-        <router-link class="text-red-600 underline" to="listeJS">
+        <router-link class="text-red-600 underline" to="listeJSon">
           lien vers
           <code class="font-mono">/src/pages/listeJSon.vue</code>
         </router-link>
@@ -54,9 +54,11 @@
     </ul>
     <ul>
       <li>
-        <router-link class="text-red-600 underline" to="news">
+        <router-link class="text-red-600 underline" :to="{
+          name:'edit-id', params:{id:'htdyhd-jj'}
+        }">
           lien vers
-          <code class="font-mono">/src/pages/edit/new.vue</code>
+          <code class="font-mono">/src/pages/edit/id.vue</code>
         </router-link>
       </li>
     </ul>

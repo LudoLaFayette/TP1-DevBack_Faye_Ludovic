@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import ForumulaireOffreMaison from "../../components/FormulaireOffreMaison.vue";
-import { value supabase } from "../supabase";
+import FormulaireOffreMaison from "../../components/FormulaireOffreMaison.vue";
+import { supabase } from "@/supabase";
 defineProps({
   id: String,
 });
-const props = defineProps(["id"]);
+
 </script>
 
 <template>
