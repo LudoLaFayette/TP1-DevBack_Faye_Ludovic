@@ -55,7 +55,7 @@
     <ul>
       <li>
         <router-link class="text-red-600 underline" :to="{
-          name:'edit-id', params:{id:'htdyhd-jj'}
+          name:'edit-id', params:{id: 'maisonObject.id_maison' }
         }">
           lien vers
           <code class="font-mono">/src/pages/edit/id.vue</code>
@@ -75,6 +75,14 @@
         <router-link class="text-red-600 underline" to="logIn">
           lien vers
           <code class="font-mono">/src/pages/logIn.vue</code>
+        </router-link>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <router-link class="text-red-600 underline" to="/quartier">
+          lien vers
+          <code class="font-mono">/src/pages/index.vue (quartier/index)</code>
         </router-link>
       </li>
     </ul>

@@ -1,22 +1,42 @@
-<script setup>
-// const res = await fetch("/public/jSon/maisons.json");
-// const maisons = await res.json();
 
-import Card from "../components/card.vue";
-import { supabase } from "../supabase";
-console.log("supabase :", supabase); // pour vérifier et "garder" supabase dans le code
-const quartiers = []; // à remplacer par l'appel à Supabase
-
-
-let { data: Maison, error } = await supabase
-  .from('quartier')
-  .select('*')
-  
-
+<script setup lang="ts">
+import {
+  Disclosure,
+   DisclosureButton,
+   DisclosurePanel,
+} from "@headlessui/vue";
+import groupBy from "lodash/groupBy";
+import { supabase } from "../../supabase";
+const { data, error } = await supabase.from("allusers").select("*");
+if (error) console.log("n'a pas pu charger la table quartiercommune :", error);
 </script>
-            
+
 <template>
-    <Card v-for="quartier in quartiers" :key="quartier.id" v-bind="quartier"/>       
+  <section class="flex flex-col">
+    <h3 class="text-2xl">Liste des quartiers</h3>
+    
+    <Disclosure
+    v-for="(listeQuartier, libelle_commune) in groupBy(
+      data,
+      'libelle_commune'
+    )"
+    :key="libelle_commune"
+  >
+  <DisclosureButton>{{libelle_commune}}</DisclosureButton>
+  <DisclosurePanel>
+    <ul>
+      <li v-for="quartierObject in (listeQuartier as any[])" :key="quartierObject.code_quartier" >
+                {{ quartierObject.libelle_quartier }}
+      </li>
+    </ul>
+  </DisclosurePanel>
+<pre>
+
+
+</pre>
+
+    </Disclosure>
+  </section>
 </template>
-// ok
+
         
