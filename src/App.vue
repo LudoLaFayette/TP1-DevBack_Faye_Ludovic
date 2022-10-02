@@ -86,6 +86,16 @@
         </router-link>
       </li>
     </ul>
+    <ul>
+      <li>
+        <router-link class="text-red-600 underline" :to="{
+          name:'edit-id', params:{id: 'quartierObject.id_quartier' }
+        }">
+          lien vers
+          <code class="font-mono">/src/pages/edit/id.vue (quartier)</code>
+        </router-link>
+      </li>
+    </ul>
   </nav>
 
   <!-- Affiche les pages -->
