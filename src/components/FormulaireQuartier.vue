@@ -1,9 +1,9 @@
 <script setup lang ="ts">
-import {  supabase } from "@/supabase";
-import {  ref } from "@vue/reactivity";
-import {  useRouter } from "vue-router";
-import {  label } from "@formkit/inputs";
-import {groupBy} from "@/lodash/groupBy";
+import { supabase } from "@/supabase";
+import { ref } from "@vue/reactivity";
+import { useRouter } from "vue-router";
+import { label } from "@formkit/inputs";
+import groupBy from "lodash/groupBy";
 
 const router = useRouter();
 const quartier = ref({});
@@ -16,7 +16,7 @@ if (props.id) {
     .select("*")
     .eq("id_quartier", props.id);
   if (error || !data)
-    console.log("n'a pas pu charger le table Maison :", error);
+    console.log("n'a pas pu charger le table quartier :", error);
   else quartier.value = data[0];
 }
 
@@ -25,30 +25,40 @@ async function upsertQuartier(dataForm, node) {
   if (error || !data) node.setErrors([error.message]);
   else {
     node.setErrors([]);
-    router.push({ name: "edit-id", params: { id: data[0].id_quartier } });
+    router.push({ name: "quartier-id", params: { id: data[0].id_quartier } });
   }
 }
+const { data: listeCommune, error } = await supabase
+  .from("commune")
+  .select("*");
+if (error) console.log("n'a pas pu charger la table Commune :", error);
+// Les convertir par `map` en un tableau d'objets {value, label} pour FormKit
+const optionsCommune = listeCommune?.map((commune) => ({
+  value: commune.code_commune,
+  label: commune.libelle_commune,
+}));
 </script>
 
 <template>
-    <div class="flex flex-row-reverse justify-center">
-        <div class = "p-2 ">
-            <h2 class ="text - 2xl "> Resulat (Prévisualisation)</h2>
-            <CardMaison v-bind="quartier"/>
-        </div>
-        <div class="p-2 border-2 mt-20 bg-indigo-50 rounded-2xl">
-            <FormKit type="form" v-model="quartier"  @submit="upsertQuartier" :submit-attrs="{ classes: { input: 'bg-red-300 p-1 rounded' } }">
-                <FormKit name="libelle_quartier" label="libelle"
-                :config="{
-                    classes: {
-                    input: 'p-1 rounded border-gray-300 shadow-sm border',
-                    label: 'text-gray-600',
-                    },
-                    }"/>
-                
-            </FormKit>        
-        </div>
+  <div class="flex flex-row-reverse justify-center">
+    <div class="p-2 ">
+      <h2 class="text - 2xl "> Resulat (Prévisualisation)</h2>
+      <div><input type="text" name="libelle_quartier" id="libelle" v-bind="quartier"></div>
     </div>
+    <div class="p-2 border-2 mt-20 bg-indigo-50 rounded-2xl">
+      <FormKit type="form" v-model="quartier" @submit="upsertQuartier"
+        :submit-attrs="{ classes: { input: 'bg-red-300 p-1 rounded' } }">
+        <FormKit name="libelle_quartier" label="libelle" :config="{
+        classes: {
+        input: 'p-1 rounded border-gray-300 shadow-sm border',
+        label: 'text-gray-600',
+        },
+        }" />
+        <FormKit type="select" name="code_Commune" label="Commune" :options="optionsCommune" />
+
+      </FormKit>
+    </div>
+  </div>
 </template>
 
   

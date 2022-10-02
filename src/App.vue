@@ -64,9 +64,9 @@
     </ul>
     <ul>
       <li>
-        <router-link class="text-red-600 underline" to="logout">
+        <router-link class="text-red-600 underline" to="provider">
           lien vers
-          <code class="font-mono">/src/pages/edit/logout.vue</code>
+          <code class="font-mono">/src/pages/edit/provider.vue</code>
         </router-link>
       </li>
     </ul>
@@ -88,18 +88,16 @@
     </ul>
     <ul>
       <li>
-        <router-link class="text-red-600 underline" :to="{
-          name:'edit-id', params:{id: 'quartierObject.id_quartier' }
-        }">
-          lien vers
-          <code class="font-mono">/src/pages/edit/id.vue (quartier)</code>
-        </router-link>
+        <RouterLink class="text-red-600 underline" :to="{
+          name: 'quartier-id',
+          params: { id: 'quartierObject.code_quartier' },
+        }"><code class="font-mono">/src/pages/edit/id.vue (quartier)</code></RouterLink>
       </li>
     </ul>
   </nav>
 
   <!-- Affiche les pages -->
-<Suspense>
+  <Suspense>
     <router-view class="m-2 border-2 p-2" />
     <template #fallback>
       Loading...
