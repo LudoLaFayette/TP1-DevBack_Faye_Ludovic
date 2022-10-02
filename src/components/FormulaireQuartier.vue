@@ -3,7 +3,7 @@ import {  supabase } from "@/supabase";
 import {  ref } from "@vue/reactivity";
 import {  useRouter } from "vue-router";
 import {  label } from "@formkit/inputs";
-import groupBy from "@/lodash/groupBy";
+import {groupBy} from "@/lodash/groupBy";
 
 const router = useRouter();
 const quartier = ref({});
