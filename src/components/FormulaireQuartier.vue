@@ -28,6 +28,22 @@ async function upsertQuartier(dataForm, node) {
     router.push({ name: "quartier-id", params: { id: data[0].id_quartier } });
   }
 }
+async function supprimerQuartier() {
+  const { data, error } = await supabase
+    .from("Quartier")
+    .delete()
+    .match({ code_Quartier: quartierObject.value.code_Quartier });
+  if (error) {
+    console.error(
+      "Erreur à la suppression de ",
+      quartierObject.value,
+      "erreur :",
+      error
+    );
+  } else {
+    router.push("/quartier");
+  }
+}
 const { data: listeCommune, error } = await supabase
   .from("commune")
   .select("*");
@@ -37,6 +53,7 @@ const optionsCommune = listeCommune?.map((commune) => ({
   value: commune.code_commune,
   label: commune.libelle_commune,
 }));
+
 </script>
 
 <template>
@@ -58,6 +75,17 @@ const optionsCommune = listeCommune?.map((commune) => ({
 
       </FormKit>
     </div>
+    <button type="button" v-if="quartierObject.code_Quartier" @click="($refs.dialogSupprimer as any).showModal()"
+      class="focus-style justify-self-end rounded-md bg-red-500 p-2 shadow-sm">
+      Supprimer l'offre
+    </button>
+    <dialog ref="dialogSupprimer" @click="($event.currentTarget as any).close()">
+      <button type="button" class="focus-style justify-self-end rounded-md bg-blue-300 p-2 shadow-sm">
+        Annuler</button><button type="button" @click="supprimerQuartier()"
+        class="focus-style rounded-md bg-red-500 p-2 shadow-sm">
+        Confirmer suppression
+      </button>
+    </dialog>
   </div>
 </template>
 
