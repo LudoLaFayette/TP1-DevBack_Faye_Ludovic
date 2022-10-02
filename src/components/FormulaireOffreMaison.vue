@@ -91,7 +91,7 @@ if (error) console.log("n'a pas pu charger la vue quartiercommune :", error);
                 label: 'text-gray-600',
                 },
                 }" />
-                <FormKit name="code_Quartier" label="Quartier" type="select">
+                <FormKit name="code_quartier" label="quartier" type="select">
                     <option value="" :disabled="true">Choisir un quartier...</option>
                     <!-- À vous : deux petits `v-for` partant d'un `groupBy` pour produire :
     https://formkit.com/inputs/select#default-slot

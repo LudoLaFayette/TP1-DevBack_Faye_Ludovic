@@ -30,9 +30,9 @@ async function upsertQuartier(dataForm, node) {
 }
 async function supprimerQuartier() {
   const { data, error } = await supabase
-    .from("Quartier")
+    .from("quartier")
     .delete()
-    .match({ code_Quartier: quartierObject.value.code_Quartier });
+    .match({ code_quartier: quartierObject.value.code_quartier });
   if (error) {
     console.error(
       "Erreur à la suppression de ",
@@ -75,7 +75,7 @@ const optionsCommune = listeCommune?.map((commune) => ({
 
       </FormKit>
     </div>
-    <button type="button" v-if="quartierObject.code_Quartier" @click="($refs.dialogSupprimer as any).showModal()"
+    <button type="button" v-if="quartierObject.code_quartier" @click="($refs.dialogSupprimer as any).showModal()"
       class="focus-style justify-self-end rounded-md bg-red-500 p-2 shadow-sm">
       Supprimer l'offre
     </button>
